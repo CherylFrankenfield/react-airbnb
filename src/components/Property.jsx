@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 
 function Property(props) {
   return(
-    <div>
+    <div className="property-listing">
+      <style jsx> {`
+          img {
+            width: 300px;
+          }
+          .property-listing {
+            padding: 5px;
+            border: solid black 2px;
+          }
+            `}
+      </style>
       <div>
         <img src={props.image}/>
       </div>

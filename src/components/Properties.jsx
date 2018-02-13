@@ -1,6 +1,7 @@
 import React from 'react';
 import Property from './Property';
 
+
 const propertiesList = [
   { city: 'Santa Barbara',
     state: 'California',
