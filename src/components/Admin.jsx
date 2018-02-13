@@ -19,8 +19,8 @@ class Admin extends React.Component {
   }
 }
 
-// Admin.propTypes = {
-//   onNewPropertyCreation: PropTypes.func
-// };
+Admin.propTypes = {
+  onNewPropertyCreation: PropTypes.func
+};
 
 export default Admin;

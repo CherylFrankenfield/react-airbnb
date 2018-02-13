@@ -20,6 +20,7 @@ function Property(props) {
       <h2>{props.title}</h2>
       <h4>{props.city}, {props.state}</h4>
       <h4>From {props.price} per night</h4>
+
     </div>
   );
 
@@ -33,6 +34,7 @@ Property.propTypes = {
   bedrooms: PropTypes.number,
   title: PropTypes.string,
   image: PropTypes.string
+
 };
 
 export default Property;

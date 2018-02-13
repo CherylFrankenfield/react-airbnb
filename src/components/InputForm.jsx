@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function InputForm(props){
   let _city = null;
@@ -15,7 +16,7 @@ function InputForm(props){
     event.preventDefault();
     // console.log(_city.value);
     // console.log(_state.value);
-    props.onNewPropertyCreation({city: _city.value, state: _state.value, type: _type.value, price: _price.value, bedrooms: _bedrooms.value, title: _title.value, image: _image.value});
+    props.onNewPropertyCreation({city: _city.value, state: _state.value, type: _type.value, price: _price.value, bedrooms: _bedrooms.value, title: _title.value, image: _image.value, id: v4()});
     _city.value = '';
     _state.value = '';
     _type.value = '';
