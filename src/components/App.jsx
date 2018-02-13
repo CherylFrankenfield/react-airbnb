@@ -4,17 +4,34 @@ import Properties from './Properties';
 import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
 
-function App(){
-  return (
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={Properties} />
-        <Route path='/admin' component={Admin} />
-      </Switch>
+class App extends React.Component {
 
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      propertiesList: []
+    };
+    this.handleAddingNewPropertyToList = this.handleAddingNewPropertyToList.bind(this);
+  }
+
+  handleAddingNewPropertyToList(newProperty) {
+    let newPropertiesList = this.state.propertiesList.slice();
+    newPropertiesList.push(newProperty);
+    this.setState({propertiesList: newPropertiesList});
+  }
+
+  render(){
+    return (
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/' render={()=> <Properties properties={this.state.propertiesList} /> } />
+          <Route path='/admin' render={()=> <Admin onNewPropertyCreation={this.handleAddingNewPropertyToList} /> } />
+        </Switch>
+
+      </div>
+    );
+  }
 }
 
 export default App;
