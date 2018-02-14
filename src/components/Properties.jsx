@@ -3,7 +3,6 @@ import Property from './Property';
 import PropTypes from 'prop-types';
 
 function Properties(props) {
-
   return(
     <div>
       <h1>Available Properties</h1>
@@ -21,6 +20,7 @@ function Properties(props) {
   );
 
 }
+
 
 Properties.propTypes = {
   properties: PropTypes.array
