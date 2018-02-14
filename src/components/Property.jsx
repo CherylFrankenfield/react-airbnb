@@ -33,6 +33,7 @@ class Property extends React.Component {
         <style jsx> {`
             img {
               width: 300px;
+              border: 1px solid darkgray;
             }
             .property-listing {
               padding: 5px;
@@ -43,7 +44,7 @@ class Property extends React.Component {
         <div>
           <img src={this.props.image}/>
         </div>
-        <h2>{this.props.title}</h2>
+        <h3>{this.props.title}</h3>
         <h4>{this.props.city}, {this.props.state}</h4>
         <h4>From {this.props.price} per night</h4>
         <div>

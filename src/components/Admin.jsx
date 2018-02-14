@@ -13,7 +13,16 @@ class Admin extends React.Component {
   render() {
     if (this.state.formVisibleOnPage) {
       return (
-        <InputForm onNewPropertyCreation={this.props.onNewPropertyCreation}/>
+        <div>
+            <style jsx> {`
+                div {
+                  margin-left: 20px;
+                }
+
+                  `}
+            </style>
+          <InputForm onNewPropertyCreation={this.props.onNewPropertyCreation}/>
+        </div>
       );
     }
   }

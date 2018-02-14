@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Properties(props) {
   return(
     <div>
-      <h1>Available Properties</h1>
+      <h2>Our properties</h2>
       {props.properties.map((place) =>
         <Property city={place.city}
           state={place.state}
