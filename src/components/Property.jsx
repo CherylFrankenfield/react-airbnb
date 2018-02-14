@@ -6,20 +6,28 @@ class Property extends React.Component {
     super(props)
     this.state = {
       detailsVisibleOnPage: false
-
-
     }
   this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(){
-    this.setState({
-      detailsVisibleOnPage: true
-    })
-      console.log('detailsVisibleOnPage is currently set to:' + this.state.detailsVisibleOnPage);
+    this.setState(prevState => ({
+     detailsVisibleOnPage: !prevState.detailsVisibleOnPage
+   }));
+
   }
 
   render() {
+    let currentlyVisibleOnPage = null;
+    if (this.state.detailsVisibleOnPage) {
+      currentlyVisibleOnPage =
+      <ul>
+        <li>{this.props.bedrooms}</li>
+        <li>{this.props.type}</li>
+      </ul>
+    } else {
+      currentlyVisibleOnPage = null;
+    }
     return(
       <div className="property-listing">
         <style jsx> {`
@@ -38,6 +46,9 @@ class Property extends React.Component {
         <h2>{this.props.title}</h2>
         <h4>{this.props.city}, {this.props.state}</h4>
         <h4>From {this.props.price} per night</h4>
+        <div>
+          {currentlyVisibleOnPage}
+        </div>
         <p onClick={this.handleClick}>Click here to see more details.</p>
       </div>
     );
